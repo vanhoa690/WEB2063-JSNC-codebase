@@ -1,34 +1,39 @@
 {
-  "movies": [
+  "courses": [
     {
       "id": 1,
-      "name": "Avengers: Endgame",
-      "genre": "Action",
-      "year": 2019
+      "name": "JavaScript Cơ Bản",
+      "teacher": "Nguyễn Văn An",
+      "price": 500000,
+      "category": "Frontend"
     },
     {
       "id": 2,
-      "name": "Interstellar",
-      "genre": "Sci-Fi",
-      "year": 2014
+      "name": "Node.js Cơ Bản",
+      "teacher": "Trần Văn Bình",
+      "price": 650000,
+      "category": "Backend"
     },
     {
       "id": 3,
-      "name": "Spider-Man: No Way Home",
-      "genre": "Action",
-      "year": 2021
+      "name": "React Cơ Bản",
+      "teacher": "Lê Minh Tuấn",
+      "price": 700000,
+      "category": "Frontend"
     },
     {
       "id": 4,
-      "name": "The Lion King",
-      "genre": "Animation",
-      "year": 2019
+      "name": "Lập trình Mobile",
+      "teacher": "Phạm Văn Nam",
+      "price": 800000,
+      "category": "Mobile"
     },
     {
       "id": 5,
-      "name": "Parasite",
-      "genre": "Drama",
-      "year": 2019
+      "name": "PHP Laravel Cơ Bản",
+      "teacher": "Hoàng Minh Đức",
+      "price": 600000,
+      "category": "Backend"
     }
   ]
 }
