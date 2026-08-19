@@ -1,4 +1,5 @@
 {
+  "users": [],
   "courses": [
     {
       "id": 1,
@@ -27,13 +28,6 @@
       "teacher": "Phạm Văn Nam",
       "price": 800000,
       "category": "Mobile"
-    },
-    {
-      "id": 5,
-      "name": "PHP Laravel Cơ Bản",
-      "teacher": "Hoàng Minh Đức",
-      "price": 600000,
-      "category": "Backend"
     }
   ]
 }
