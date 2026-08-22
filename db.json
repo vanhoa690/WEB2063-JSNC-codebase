@@ -1,33 +1,40 @@
 {
-  "users": [],
   "courses": [
     {
       "id": 1,
-      "name": "JavaScript Cơ Bản",
-      "teacher": "Nguyễn Văn An",
-      "price": 500000,
+      "name": "Lập trình JavaScript",
+      "duration": 30,
+      "thumbnail": "https://picsum.photos/300/200?random=1",
       "category": "Frontend"
     },
     {
       "id": 2,
-      "name": "Node.js Cơ Bản",
-      "teacher": "Trần Văn Bình",
-      "price": 650000,
-      "category": "Backend"
-    },
-    {
-      "id": 3,
-      "name": "React Cơ Bản",
-      "teacher": "Lê Minh Tuấn",
-      "price": 700000,
+      "name": "ReactJS Cơ Bản",
+      "duration": 40,
+      "thumbnail": "https://picsum.photos/300/200?random=2",
       "category": "Frontend"
     },
     {
+      "id": 3,
+      "name": "Lập trình PHP",
+      "duration": 25,
+      "thumbnail": "https://picsum.photos/300/200?random=3",
+      "category": "Backend"
+    },
+    {
       "id": 4,
-      "name": "Lập trình Mobile",
-      "teacher": "Phạm Văn Nam",
-      "price": 800000,
-      "category": "Mobile"
+      "name": "Thiết kế UI UX",
+      "duration": 20,
+      "thumbnail": "https://picsum.photos/300/200?random=4",
+      "category": "Frontend"
+    },
+    {
+      "id": 5,
+      "name": "NodeJS Nâng Cao",
+      "duration": 35,
+      "thumbnail": "https://picsum.photos/300/200?random=5",
+      "category": "Backend"
     }
-  ]
+  ],
+  "users": []
 }
