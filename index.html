@@ -49,11 +49,11 @@
         >
           <div>
             <h1 id="title" class="text-3xl font-bold text-indigo-700">
-              Danh sách phim
+              Danh sách tin tuyển dụng
             </h1>
 
             <p class="mt-2 text-sm text-slate-500">
-              Quản lý thông tin phim trong hệ thống.
+              Quản lý thông tin tin tuyển dụng trong hệ thống.
             </p>
           </div>
 
@@ -75,12 +75,12 @@
               for="searchInput"
               class="mb-2 block text-sm font-semibold text-slate-700"
             >
-              Tìm kiếm phim
+              Tìm kiếm tin tuyển dụng
             </label>
             <input
               type="text"
               id="searchInput"
-              placeholder="Nhập tên phim hoặc danh mục..."
+              placeholder="Nhập tên tin tuyển dụng hoặc danh mục..."
               class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
             />
           </div>
@@ -98,7 +98,7 @@
               class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
             >
               <option value="id">ID</option>
-              <option value="name">Tên phim</option>
+              <option value="name">Tên tin tuyển dụng</option>
               <option value="duration">Thời lượng</option>
               <option value="category">Danh mục</option>
             </select>
@@ -137,7 +137,9 @@
                   ID
                 </th>
 
-                <th class="border-b border-slate-200 px-4 py-3">Tên phim</th>
+                <th class="border-b border-slate-200 px-4 py-3">
+                  Tên tin tuyển dụng
+                </th>
 
                 <th class="border-b border-slate-200 px-4 py-3 text-center">
                   Thời lượng
@@ -156,7 +158,7 @@
             </thead>
 
             <tbody id="movie-list" class="divide-y divide-slate-100">
-              <!-- index.js sẽ render dữ liệu phim tại đây -->
+              <!-- index.js sẽ render dữ liệu tin tuyển dụng tại đây -->
               <tr>
                 <td colspan="6" class="px-4 py-8 text-center text-slate-500">
                   Đang chờ dữ liệu...
@@ -168,7 +170,7 @@
 
         <!-- Footer note -->
         <p class="mt-4 text-sm text-slate-500">
-          Sử dụng các chức năng Sửa và Xóa để quản lý thông tin phim.
+          Sử dụng các chức năng Sửa và Xóa để quản lý thông tin tin tuyển dụng.
         </p>
       </section>
     </main>
