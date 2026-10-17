@@ -235,6 +235,7 @@ Dữ liệu tài khoản lưu theo cấu trúc:
 6. Sử dụng Axios để lưu tài khoản vào JSON Server.
 7. Đăng ký thành công thì thông báo và điều hướng đến trang Login.
 8. Xử lý lỗi khi đăng ký thất bại.
+9. emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 ### b. Đăng nhập và đăng xuất (1,0 điểm)
 

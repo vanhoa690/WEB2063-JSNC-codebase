@@ -65,68 +65,6 @@
             + Thêm mới
           </a>
         </div>
-        <!-- Tìm kiếm và sắp xếp -->
-        <div
-          class="mb-6 grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 md:grid-cols-3"
-        >
-          <!-- Tìm kiếm -->
-          <div>
-            <label
-              for="searchInput"
-              class="mb-2 block text-sm font-semibold text-slate-700"
-            >
-              Tìm kiếm tin tuyển dụng
-            </label>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Nhập tên tin tuyển dụng hoặc danh mục..."
-              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-            />
-          </div>
-
-          <!-- Chọn trường sắp xếp -->
-          <div>
-            <label
-              for="sortField"
-              class="mb-2 block text-sm font-semibold text-slate-700"
-            >
-              Sắp xếp theo
-            </label>
-            <select
-              id="sortField"
-              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-            >
-              <option value="id">ID</option>
-              <option value="name">Tên tin tuyển dụng</option>
-              <option value="duration">Thời lượng</option>
-              <option value="category">Danh mục</option>
-            </select>
-          </div>
-
-          <!-- Chọn thứ tự -->
-          <div>
-            <label
-              for="sortOrder"
-              class="mb-2 block text-sm font-semibold text-slate-700"
-            >
-              Thứ tự sắp xếp
-            </label>
-            <select
-              id="sortOrder"
-              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-            >
-              <option value="asc">Tăng dần (A → Z)</option>
-              <option value="desc">Giảm dần (Z → A)</option>
-            </select>
-          </div>
-        </div>
-
-        ```
-        <!-- Loading -->
-        <p id="loading" class="mb-4 hidden text-sm text-slate-500">
-          Đang tải danh sách, vui lòng chờ...
-        </p>
 
         <!-- Movie table -->
         <div class="overflow-x-auto rounded-xl border border-slate-200">
