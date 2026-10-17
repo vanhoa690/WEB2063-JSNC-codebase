@@ -1,74 +1,179 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Javascript Nâng Cao - WEB2064</title>
+    <title>Danh sách - WEB2064 JSNC</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <nav class="bg-blue-600 text-white shadow">
-      <div
-        class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between"
-      >
-        <strong>WEB2064 JSNC</strong>
 
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="hover:text-gray-200">Danh sách</a>
-          <a href="add.html" class="hover:text-gray-200">Thêm mới</a>
-          <a href="register.html" class="hover:text-gray-200">Đăng ký</a>
+  <body class="min-h-screen bg-slate-100 text-slate-800">
+    <!-- Navigation -->
+    <nav class="bg-indigo-700 text-white shadow">
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4"
+      >
+        <a href="index.html" class="text-xl font-bold">WEB2064 JSNC</a>
+
+        <div class="flex items-center gap-4 text-sm">
+          <a
+            href="index.html"
+            class="font-semibold underline hover:text-indigo-200"
+          >
+            Danh sách
+          </a>
+
+          <a href="add.html" class="hover:text-indigo-200">Thêm mới</a>
+
+          <a href="register.html" class="hover:text-indigo-200">Đăng ký</a>
+
+          <a href="login.html" class="hover:text-indigo-200">Đăng nhập</a>
+
+          <button
+            id="logoutButton"
+            type="button"
+            class="hidden hover:text-indigo-200"
+          >
+            Đăng xuất
+          </button>
         </div>
-        <div class="hidden md:flex items-center space-x-6"></div>
       </div>
     </nav>
-    <div class="max-w-6xl mx-auto mt-10 px-4 text-center">
-      <h1 id="title" class="text-2xl font-semibold mb-6">Danh sách</h1>
 
-      <div class="overflow-x-auto">
-        <table class="w-full border border-gray-300 rounded-lg">
-          <thead class="bg-gray-100">
-            <tr>
-              <th class="px-4 py-2 border border-gray-300">ID</th>
-              <th class="px-4 py-2 border border-gray-300">Name</th>
-              <th class="px-4 py-2 border border-gray-300">Duration</th>
-              <th class="px-4 py-2 border border-gray-300">Thumbnail</th>
-              <th class="px-4 py-2 border border-gray-300">Category</th>
-              <th class="px-4 py-2 border border-gray-300">Actions</th>
-            </tr>
-          </thead>
+    <!-- Main content -->
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <section class="rounded-2xl bg-white p-6 shadow-lg sm:p-8">
+        <!-- Page heading -->
+        <div
+          class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <h1 id="title" class="text-3xl font-bold text-indigo-700">
+              Danh sách phim
+            </h1>
 
-          <tbody id="movie-list">
-            <tr class="hover:bg-gray-50">
-              <td class="px-4 py-2 border border-gray-300">1</td>
-              <td class="px-4 py-2 border border-gray-300">
-                JavaScript Cơ Bản
-              </td>
-              <td class="px-4 py-2 border border-gray-300">30</td>
-              <td class="px-4 py-2 border border-gray-300">
-                <img src="https://picsum.photos/300/200?random=1" />
-              </td>
-              <td class="px-4 py-2 border border-gray-300">Frontend</td>
-              <td class="px-4 py-2 border border-gray-300">
-                <div class="flex items-center justify-center gap-2">
-                  <button
-                    class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
-                  >
-                    Edit
-                  </button>
+            <p class="mt-2 text-sm text-slate-500">
+              Quản lý thông tin phim trong hệ thống.
+            </p>
+          </div>
 
-                  <button
-                    class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
-    <script src="index.js"></script>
+          <a
+            id="addButton"
+            href="add.html"
+            class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white transition hover:bg-indigo-700"
+          >
+            + Thêm mới
+          </a>
+        </div>
+        <!-- Tìm kiếm và sắp xếp -->
+        <div
+          class="mb-6 grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 md:grid-cols-3"
+        >
+          <!-- Tìm kiếm -->
+          <div>
+            <label
+              for="searchInput"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Tìm kiếm phim
+            </label>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Nhập tên phim hoặc danh mục..."
+              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            />
+          </div>
+
+          <!-- Chọn trường sắp xếp -->
+          <div>
+            <label
+              for="sortField"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Sắp xếp theo
+            </label>
+            <select
+              id="sortField"
+              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            >
+              <option value="id">ID</option>
+              <option value="name">Tên phim</option>
+              <option value="duration">Thời lượng</option>
+              <option value="category">Danh mục</option>
+            </select>
+          </div>
+
+          <!-- Chọn thứ tự -->
+          <div>
+            <label
+              for="sortOrder"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Thứ tự sắp xếp
+            </label>
+            <select
+              id="sortOrder"
+              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            >
+              <option value="asc">Tăng dần (A → Z)</option>
+              <option value="desc">Giảm dần (Z → A)</option>
+            </select>
+          </div>
+        </div>
+
+        ```
+        <!-- Loading -->
+        <p id="loading" class="mb-4 hidden text-sm text-slate-500">
+          Đang tải danh sách, vui lòng chờ...
+        </p>
+
+        <!-- Movie table -->
+        <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full min-w-[760px] border-collapse text-left text-sm">
+            <thead class="bg-indigo-50 text-slate-700">
+              <tr>
+                <th class="border-b border-slate-200 px-4 py-3 text-center">
+                  ID
+                </th>
+
+                <th class="border-b border-slate-200 px-4 py-3">Tên phim</th>
+
+                <th class="border-b border-slate-200 px-4 py-3 text-center">
+                  Thời lượng
+                </th>
+
+                <th class="border-b border-slate-200 px-4 py-3 text-center">
+                  Hình ảnh
+                </th>
+
+                <th class="border-b border-slate-200 px-4 py-3">Danh mục</th>
+
+                <th class="border-b border-slate-200 px-4 py-3 text-center">
+                  Chức năng
+                </th>
+              </tr>
+            </thead>
+
+            <tbody id="movie-list" class="divide-y divide-slate-100">
+              <!-- index.js sẽ render dữ liệu phim tại đây -->
+              <tr>
+                <td colspan="6" class="px-4 py-8 text-center text-slate-500">
+                  Đang chờ dữ liệu...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Footer note -->
+        <p class="mt-4 text-sm text-slate-500">
+          Sử dụng các chức năng Sửa và Xóa để quản lý thông tin phim.
+        </p>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
