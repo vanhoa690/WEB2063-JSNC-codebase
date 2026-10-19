@@ -65,8 +65,60 @@
             + Thêm mới
           </a>
         </div>
+        <!-- Tìm kiếm và sắp xếp -->
+        <div
+          class="mb-6 grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 md:grid-cols-3"
+        >
+          <!-- Tìm kiếm -->
+          <div>
+            <label
+              for="searchInput"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Tìm kiếm tin tuyển dụng
+            </label>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Nhập tên tin tuyển dụng"
+              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            />
+          </div>
 
-        <!-- Movie table -->
+          <!-- Chọn trường sắp xếp -->
+          <div>
+            <label
+              for="sortField"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Sắp xếp theo
+            </label>
+            <select
+              id="sortField"
+              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            >
+              <option value="id">ID</option>
+            </select>
+          </div>
+
+          <!-- Chọn thứ tự -->
+          <div>
+            <label
+              for="sortOrder"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Thứ tự sắp xếp
+            </label>
+            <select
+              id="sortOrder"
+              class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            >
+              <option value="asc">Tăng dần (A → Z)</option>
+              <option value="desc">Giảm dần (Z → A)</option>
+            </select>
+          </div>
+        </div>
+
         <div class="overflow-x-auto rounded-xl border border-slate-200">
           <table class="w-full min-w-[760px] border-collapse text-left text-sm">
             <thead class="bg-indigo-50 text-slate-700">
@@ -95,21 +147,57 @@
               </tr>
             </thead>
 
-            <tbody id="movie-list" class="divide-y divide-slate-100">
-              <!-- index.js sẽ render dữ liệu tin tuyển dụng tại đây -->
-              <tr>
-                <td colspan="6" class="px-4 py-8 text-center text-slate-500">
-                  Đang chờ dữ liệu...
+            <tbody id="list" class="divide-y divide-slate-100">
+              <tr class="transition hover:bg-slate-50">
+                <td class="border-b border-slate-100 px-4 py-3 text-center">
+                  1
+                </td>
+
+                <td
+                  class="border-b border-slate-100 px-4 py-3 font-medium text-slate-800"
+                >
+                  Nhân viên Frontend Developer
+                </td>
+
+                <td class="border-b border-slate-100 px-4 py-3 text-center">
+                  Toàn thời gian
+                </td>
+
+                <td class="border-b border-slate-100 px-4 py-3 text-center">
+                  <img
+                    src="https://placehold.co/80x50?text=Job"
+                    alt="Hình ảnh tuyển dụng"
+                    class="mx-auto h-12 w-20 rounded object-cover"
+                  />
+                </td>
+
+                <td class="border-b border-slate-100 px-4 py-3">
+                  <span
+                    class="rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700"
+                  >
+                    Công nghệ thông tin
+                  </span>
+                </td>
+
+                <td class="border-b border-slate-100 px-4 py-3 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <button
+                      class="rounded bg-blue-500 px-3 py-1.5 text-white transition hover:bg-blue-600"
+                    >
+                      Sửa
+                    </button>
+
+                    <button
+                      class="rounded bg-red-500 px-3 py-1.5 text-white transition hover:bg-red-600"
+                    >
+                      Xóa
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <!-- Footer note -->
-        <p class="mt-4 text-sm text-slate-500">
-          Sử dụng các chức năng Sửa và Xóa để quản lý thông tin tin tuyển dụng.
-        </p>
       </section>
     </main>
 

@@ -299,3 +299,46 @@ Sử dụng JavaScript để kiểm tra trạng thái đăng nhập trước khi
 | **Tổng cộng**                                   | **10,0** |
 
 ---
+
+## Câu 6 -- Tìm kiếm bằng JSON Server
+
+Tạo ô nhập tìm kiếm theo tên.
+
+Ví dụ request:
+
+```http
+GET /jobs?title_like=Frontend
+```
+
+## Câu 7 -- Nâng cao: Sắp xếp dữ liệu từ API
+
+Bổ sung hai danh sách lựa chọn:
+
+```text
+Sắp xếp theo: [Lương ▼]
+Thứ tự:       [Giảm dần ▼]
+```
+
+**Sắp xếp theo:**
+
+- Lương (`salary`)
+- Id (`id`)
+
+**Thứ tự:**
+
+- Tăng dần (`asc`)
+- Giảm dần (`desc`)
+
+### Ví dụ request
+
+Sắp xếp theo năm phát hành giảm dần:
+
+```http
+GET /jobs?_sort=salary&_order=desc
+```
+
+Tìm tin có tên chứa `Frontend`, sau đó sắp xếp theo lương tăng dần:
+
+```http
+GET /jobs?title_like=Frontend&_sort=salary&_order=asc
+```
