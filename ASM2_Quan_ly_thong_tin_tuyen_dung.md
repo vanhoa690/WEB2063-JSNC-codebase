@@ -37,7 +37,7 @@ Xây dựng ứng dụng **Job Management – Quản lý thông tin tuyển dụ
 
 ## 2. API sử dụng
 
-- Danh sách tin tuyển dụng: `http://localhost:3000/jobs`
+- Danh sách tin tuyển dụng: `http://localhost:3000/vacancies`
 - Danh sách tài khoản: `http://localhost:3000/users`
 
 Khởi chạy JSON Server bằng lệnh phù hợp với phiên bản đã học, ví dụ:
@@ -53,51 +53,51 @@ Tạo file `db.json` với nội dung:
 ```json
 {
   "users": [],
-  "jobs": [
+  "vacancies": [
     {
       "id": "1",
-      "title": "Frontend Developer",
-      "company": "FPT Software",
-      "location": "Hà Nội",
-      "salary": 15000000,
-      "employmentType": "Full-time",
-      "description": "Phát triển giao diện web."
+      "positionName": "Frontend Developer",
+      "employer": "FPT Software",
+      "workplace": "Hà Nội",
+      "monthlyIncome": 15000000,
+      "workType": "Full-time",
+      "jobDetails": "Phát triển giao diện web."
     },
     {
       "id": "2",
-      "title": "Backend Developer",
-      "company": "CMC Global",
-      "location": "Hà Nội",
-      "salary": 18000000,
-      "employmentType": "Full-time",
-      "description": "Phát triển API bằng Node.js."
+      "positionName": "Backend Developer",
+      "employer": "CMC Global",
+      "workplace": "Hà Nội",
+      "monthlyIncome": 18000000,
+      "workType": "Full-time",
+      "jobDetails": "Phát triển API bằng Node.js."
     },
     {
       "id": "3",
-      "title": "UI/UX Designer",
-      "company": "VNG Corporation",
-      "location": "TP. Hồ Chí Minh",
-      "salary": 12000000,
-      "employmentType": "Part-time",
-      "description": "Thiết kế giao diện người dùng."
+      "positionName": "UI/UX Designer",
+      "employer": "VNG Corporation",
+      "workplace": "TP. Hồ Chí Minh",
+      "monthlyIncome": 12000000,
+      "workType": "Part-time",
+      "jobDetails": "Thiết kế giao diện người dùng."
     },
     {
       "id": "4",
-      "title": "Intern React Developer",
-      "company": "Tech Company",
-      "location": "Đà Nẵng",
-      "salary": 5000000,
-      "employmentType": "Internship",
-      "description": "Hỗ trợ phát triển ứng dụng."
+      "positionName": "Intern React Developer",
+      "employer": "Tech Company",
+      "workplace": "Đà Nẵng",
+      "monthlyIncome": 5000000,
+      "workType": "Internship",
+      "jobDetails": "Hỗ trợ phát triển ứng dụng."
     },
     {
       "id": "5",
-      "title": "Tester",
-      "company": "ABC Technology",
-      "location": "Hà Nội",
-      "salary": 10000000,
-      "employmentType": "Full-time",
-      "description": "Kiểm thử chức năng ứng dụng."
+      "positionName": "Tester",
+      "employer": "ABC Technology",
+      "workplace": "Hà Nội",
+      "monthlyIncome": 10000000,
+      "workType": "Full-time",
+      "jobDetails": "Kiểm thử chức năng ứng dụng."
     }
   ]
 }
@@ -112,7 +112,7 @@ Tạo file `db.json` với nội dung:
 Sử dụng Axios để lấy danh sách tin tuyển dụng từ API:
 
 ```http
-GET /jobs
+GET /vacancies
 ```
 
 Hiển thị danh sách dưới dạng bảng với các cột:
@@ -145,7 +145,7 @@ Hình thức làm việc được chọn từ danh sách:
 Khi nhấn nút **Thêm tin tuyển dụng**, gửi request:
 
 ```http
-POST /jobs
+POST /vacancies
 ```
 
 ### Yêu cầu
@@ -167,7 +167,7 @@ Khi nhấn nút Sửa, đưa thông tin hiện tại của tin tuyển dụng l�
 Khi nhấn nút **Cập nhật**, gửi request:
 
 ```http
-PUT /jobs/:id
+PUT /vacancies/:id
 ```
 
 **Yêu cầu:**
@@ -186,7 +186,7 @@ Mỗi dòng tin tuyển dụng có nút **Xóa**.
 Khi nhấn nút Xóa, gửi request:
 
 ```http
-DELETE /jobs/:id
+DELETE /vacancies/:id
 ```
 
 **Yêu cầu:**
@@ -241,7 +241,7 @@ Dữ liệu tài khoản lưu theo cấu trúc:
 
 Form đăng nhập gồm:
 
-- Username.
+- Email.
 - Password.
 
 Sử dụng Axios để lấy danh sách tài khoản:
@@ -250,7 +250,7 @@ Sử dụng Axios để lấy danh sách tài khoản:
 GET /users
 ```
 
-Kiểm tra username và password người dùng nhập với dữ liệu tài khoản.
+Kiểm tra email và password người dùng nhập với dữ liệu tài khoản.
 
 **Yêu cầu:**
 
@@ -307,7 +307,7 @@ Tạo ô nhập tìm kiếm theo tên.
 Ví dụ request:
 
 ```http
-GET /jobs?title_like=Frontend
+GET /vacancies?title_like=Frontend
 ```
 
 ## Câu 7 -- Nâng cao: Sắp xếp dữ liệu từ API
@@ -321,7 +321,7 @@ Thứ tự:       [Giảm dần ▼]
 
 **Sắp xếp theo:**
 
-- Lương (`salary`)
+- Lương (`monthlyIncome`)
 - Id (`id`)
 
 **Thứ tự:**
@@ -334,11 +334,11 @@ Thứ tự:       [Giảm dần ▼]
 Sắp xếp theo năm phát hành giảm dần:
 
 ```http
-GET /jobs?_sort=salary&_order=desc
+GET /vacancies?_sort=monthlyIncome&_order=desc
 ```
 
 Tìm tin có tên chứa `Frontend`, sau đó sắp xếp theo lương tăng dần:
 
 ```http
-GET /jobs?title_like=Frontend&_sort=salary&_order=asc
+GET /vacancies?title_like=Frontend&_sort=monthlyIncome&_order=asc
 ```
